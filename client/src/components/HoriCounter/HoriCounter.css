@@ -1,0 +1,44 @@
+.hori-counter-container{
+ 
+}
+
+.hori-counter{
+    display: flex;
+    justify-content: space-evenly;
+    background: linear-gradient(to right bottom,
+    rgba(58, 69, 119, 0.4),
+    rgba(15, 19, 65, 0.1));
+    backdrop-filter: blur(15px);
+    margin-top: 1.5rem;
+    z-index: 1;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.counter-row{
+    padding: 2rem;
+}
+.counter-row h2{
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.counter-row p{
+    color: var(--dark-orange);
+}
+.counter-circle-div{
+    /* display: flex; */
+    flex-direction: row;
+}
+.counter-circle{
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    background: linear-gradient(to bottom, var(--light-orange),var(--dark-orange) );
+    z-index: 0;
+    position: absolute;
+    
+}
+.counter-circle:nth-child(2){
+    left: 50%;
+}
+.counter-circle:nth-child(3){
+    left: 80%;
+}

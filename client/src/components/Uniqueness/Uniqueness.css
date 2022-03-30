@@ -1,0 +1,49 @@
+.uniqueness-container{
+    color: white;
+    text-align: center;
+    padding-top: 5rem;
+    padding: 5rem;
+}
+
+
+.uniqueness-header{
+    font-size: 25px;
+}
+.uniqueness-subheader{
+    font-size: 15px;
+    font-weight: 300;
+}
+.uniqueness-row{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+/* .unique-card-container{
+    
+    display: flex;
+    justify-content: center;
+} */
+.unique-card{
+    height: 206px;
+    width: 280px;
+    background: linear-gradient(to right bottom,
+    rgba(58, 69, 119, 0.4),
+    rgba(15, 19, 65, 0.1));
+    backdrop-filter: blur(15px);
+    margin-top: 3rem;
+    z-index: 19999;
+    border-radius: 20px;
+    margin-right: 3rem;
+}
+.unique-card img{
+    height: 7rem;
+}
+.unique-circle{
+    height: 247px;
+    width: 160px;
+    position: absolute;
+    border-radius: 50%;
+    z-index: 0;
+    margin-top: 1.8rem;
+    background: linear-gradient(var(--light-orange),var(--dark-orange));
+}
