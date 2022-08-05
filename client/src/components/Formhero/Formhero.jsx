@@ -61,7 +61,7 @@ function Formhero({
             </div>
             <div className="form__hero-text-wrapper">
               {/* <pre>{JSON.stringify(inputValues,undefined,2)}</pre> */}
-              <form onSubmit={onSubmit}>
+              <form>
                 <div className="form-col">
                   {/* {message===null ? null : <div className='success-message'>{message}</div>} */}
                   <div className="form-col">
@@ -160,6 +160,7 @@ function Formhero({
                             width: "100%",
                             opacity: false ? "0.5" : "1",
                           }}
+                          onClick={onSubmit}
                         >
                           {loading ? "Sending..." : "Send now"}
                         </Button>

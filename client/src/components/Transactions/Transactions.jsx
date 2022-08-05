@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { TradeContext } from "../../context/TradeContext";
 import { Button } from "../Button/Button";
-
+import { shortenAddress } from "../../utils/shortenAddress";
 const Transactions = () => {
   const { connectWallet, currentAccount, transactions } =
     useContext(TradeContext);
@@ -26,6 +26,7 @@ const Transactions = () => {
     );
   };
   const TransactionsCard = ({ transaction }) => {
+    console.log(transaction);
     return (
       <>
         <div
@@ -36,8 +37,8 @@ const Transactions = () => {
           }}
           className={"mytransparent"}
         >
-          <h4>Address From:{transaction.addressFrom}</h4>
-          <h4>Address To:{transaction.addressTo}</h4>
+          <h4>Address From:{shortenAddress(transaction.addressFrom)}</h4>
+          <h4>Address To:{transaction.To ?? ""}</h4>
           <h4>Message:{transaction.message}</h4>
           <h4>Keyword:{transaction.keyword}</h4>
           <h4>Amount:{transaction.amount} ETH</h4>

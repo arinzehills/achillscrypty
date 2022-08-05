@@ -55,6 +55,7 @@ export const TradesProvider = ({ children }) => {
       // throw new Error("No Ethereum object");
     }
   };
+
   const checkIfTransactions = async () => {
     try {
       const tradeContract = getEthereumContract();
@@ -122,8 +123,9 @@ export const TradesProvider = ({ children }) => {
           },
         ],
       });
+      const addressTo = formValues.address;
       const transactionHash = await tradeContract.addToBlockchain(
-        formValues.address,
+        "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
         parsedAmount,
         formValues.message,
         formValues.keyword

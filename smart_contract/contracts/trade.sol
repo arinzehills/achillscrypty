@@ -19,11 +19,11 @@ contract Trade{
     }
     TransferStruct [] trades;
 
-    function addToBlockchain(address payable receiver,uint amount,string memory message,string memory keyword) public{
+    function addToBlockchain(address payable receiveraddr,uint amount,string memory message,string memory keyword) public{
         tradeCounter +=1;
-        trades.push(TransferStruct(msg.sender, receiver,amount,message,block.timestamp,keyword));
+        trades.push(TransferStruct(msg.sender, receiveraddr,amount,message,block.timestamp,keyword));
 
-        emit Transfer(msg.sender, receiver, amount, message, block.timestamp, keyword);
+        emit Transfer(msg.sender, receiveraddr, amount, message, block.timestamp, keyword);
     }
 
     function getAllTrades() public view returns(TransferStruct[] memory){
