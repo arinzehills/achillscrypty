@@ -20,7 +20,7 @@ const getEthereumContract = () => {
 };
 
 export const TradesProvider = ({ children }) => {
-  const [currentAccount, setCurrentAccount] = useState(" ");
+  const [currentAccount, setCurrentAccount] = useState("");
   const [loading, setLoading] = useState(false);
   const [transactionCount, setTransactionCount] = useState(
     localStorage.getItem("transactionCount")
@@ -65,7 +65,7 @@ export const TradesProvider = ({ children }) => {
     } catch (error) {
       console.log(error);
 
-      throw new Error("No Ethereum object");
+      // throw new Error("No Ethereum object");
     }
   };
   const checkIfWalletIsConnected = async () => {
@@ -79,6 +79,7 @@ export const TradesProvider = ({ children }) => {
 
         getAllTransactions();
       } else {
+        console.log("no accounts found");
       }
     } catch (error) {
       console.log(error);

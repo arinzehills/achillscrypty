@@ -49,9 +49,10 @@ const Transactions = () => {
       </>
     );
   };
+  console.log(currentAccount === "");
   return (
     <>
-      <div style={{ color: "white" }}>
+      <div style={{ color: "white" }} id="transactions">
         {currentAccount ? (
           <div
             style={{
@@ -62,9 +63,15 @@ const Transactions = () => {
           >
             <h1>Your transactions</h1>
             <div style={{ display: "flex", flexWrap: "wrap" }}>
-              {transactions.map((transaction) => (
-                <TransactionsCard transaction={transaction} />
-              ))}
+              {transactions.length === 0 ? (
+                <h3 style={{ textAlign: "center" }}>
+                  No Transactions made yet!
+                </h3>
+              ) : (
+                transactions.map((transaction) => (
+                  <TransactionsCard transaction={transaction} />
+                ))
+              )}
             </div>
           </div>
         ) : (

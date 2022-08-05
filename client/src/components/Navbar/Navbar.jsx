@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { HiMenuAlt4 } from "react-icons/hi";
+import { TradeContext } from "../../context/TradeContext";
 // import {useNavigate} from 'react-router-dom';
 import { Button } from "../Button/Button";
 // import {logo} from '../../../assets/logo_transparent.png
@@ -11,6 +12,9 @@ const Navbar = () => {
   const handleClick = () => setClick(!click);
   const [button, setButton] = useState(true);
   const closeMobileMenu = () => setClick(!click);
+
+  const { connectWallet, currentAccount, transactions } =
+    useContext(TradeContext);
   // const [onHover, setOnHover] = useState(false);
   // const hoverEvent= () =>{
   //     onmouseenter{()=>setOnHover(!onHover)};
@@ -68,7 +72,7 @@ const Navbar = () => {
             </li>
             <li className="nav-items">
               <Link
-                to="/contact"
+                to="/trade#transactions"
                 className="nav-links"
                 onClick={closeMobileMenu}
               >
@@ -76,8 +80,8 @@ const Navbar = () => {
               </Link>
             </li>
             <li className="nav-items">
-              <Link to="/about" className="nav-links" onClick={closeMobileMenu}>
-                About
+              <Link to="#about" className="nav-links" onClick={closeMobileMenu}>
+                More
               </Link>
             </li>
           </ul>
@@ -85,9 +89,12 @@ const Navbar = () => {
         <ul className={click ? "nav-menu active" : "nav-menu"}>
           <li className="nav-btn" onClick={closeMobileMenu}>
             {button ? (
-              <Link to="/login">
-                <Button buttonColor="pink">Login </Button>
-              </Link>
+              // <Link to="/login">
+              currentAccount && (
+                <Button buttonColor="pink" onClick={connectWallet}>
+                  Login{" "}
+                </Button>
+              )
             ) : (
               <Link to="/login">
                 <Button buttonColor="pink" buttonSize="btn--wide">

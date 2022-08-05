@@ -48,7 +48,7 @@ function Formhero({
           >
             <div className="right__hero-img-wrapper">
               <img src={imageleft} alt={alt2} className="right__hero-img" />
-              {currentAccount && (
+              {currentAccount === "" && (
                 <Button
                   buttonColor="pink"
                   buttonSize="btn--mobile"

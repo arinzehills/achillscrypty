@@ -10,7 +10,7 @@ const homeData = {
     " for its price execution, super low fees and reliability.",
   showButton: true,
   buttonLabel: ["Send crypto", "Sign up"],
-  buttonLinks: ["/trade", "/register"],
+  buttonLinks: ["/trade", "/"],
   img: "../../images/Graphic-Oracle.png",
   imgStart: "",
   alt1: "da",
@@ -24,7 +24,7 @@ const homeData2 = {
     "this platform fart and secure and more roubust ",
   showButton: false,
   buttonLabel: ["Send crypto", "Sign up"],
-  buttonLinks: ["/trade", "/register"],
+  buttonLinks: ["/trade", "/"],
   img: "../../images/bitcoin.png",
   imgStart: "start",
   alt1: "da",
@@ -39,7 +39,7 @@ const homeData3 = {
     "from Open Zeppelin and Trail of Bits, as well as code reviews from white hats.",
   showButton: false,
   buttonLabel: ["Send crypto", "Sign up"],
-  buttonLinks: ["/trade", "/register"],
+  buttonLinks: ["/trade", "/"],
   img: "../../images/Graphic-Decentralized-Box-p-500.png",
   imgStart: "",
   alt1: "da",
@@ -54,7 +54,7 @@ const homeData4 = {
     "from Open Zeppelin and Trail of Bits, as well as code reviews from white hats.",
   showButton: false,
   buttonLabel: ["Send crypto", "Sign up"],
-  buttonLinks: ["/trade", "/register"],
+  buttonLinks: ["/trade", "/"],
   img: "../../images/Graphic-Fees.png",
   imgStart: "",
   alt1: "da",
@@ -73,7 +73,6 @@ const Home = () => {
       <Hero {...homeData3} />
       <Hero {...homeData4} />
       <Services />
-      <Footer />
     </div>
   );
 };
